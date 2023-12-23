@@ -1,9 +1,7 @@
 print("Hello from Python")
-import sys
 import cv2
 import json
 import numpy as np
-import base64
 from PIL import Image
 
 image = np.array(Image.open('./temp.jpg'))
