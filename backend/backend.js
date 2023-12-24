@@ -4,9 +4,9 @@ const spawner = require("child_process").spawn;
 const cors = require('cors');
 const bodyParser = require("body-parser");
 
-const imgGen = (imageUrl, response) => {
+const imgGen = (imageUrl, response, callback) => {
 
-    fs.writeFile('inferredResult.json', response);
+    fs.writeFileSync('inferredResult.json', response);
     fs.writeFile("temp.jpg", imageUrl, 'base64', function(err) {
         console.log(err);
     });
@@ -15,7 +15,8 @@ const imgGen = (imageUrl, response) => {
     console.log("Python called");
 
     python_process.on('close', function() {
-        console.log("Done");
+        console.log("Python done");
+        callback();
     })
     python_process.on('error', function(err) {
         console.error('Python process error:', err);
@@ -37,16 +38,16 @@ app.post('/infer', (req, res) => {
     const imgBase64 = req.body.imageUrl;
     const predictionResult = req.body.response;
 
-    imgGen(imgBase64, predictionResult);
+    imgGen(imgBase64, predictionResult, () => {
+        console.log("Labeling done. Creating response");
 
-    console.log("Labeling done. Creating response");
+        const inferredImage = fs.readFileSync("./labeled.jpg", {
+            encoding: "base64"
+        });
 
-    const inferredImage = fs.readFile("./labeled.jpg", {
-        encoding: "base64"
+        res.send({inferredImage});
+        console.log("Sending response...")
     });
-
-    res.send({inferredImage});
-    console.log("Sending response...")
 })
 
 app.listen(PORT, () => {

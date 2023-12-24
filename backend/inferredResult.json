@@ -1,117 +1,135 @@
 {
-  "time": 0.3657023000000663,
+  "time": 0.20815878500002327,
   "image": {
     "width": 4344,
-    "height": 4344
+    "height": 1484
   },
   "predictions": [
     {
-      "x": 1950.5,
-      "y": 2192,
-      "width": 247,
-      "height": 354,
-      "confidence": 0.9224686622619629,
-      "class": "south",
-      "class_id": 32
+      "x": 1603,
+      "y": 635,
+      "width": 218,
+      "height": 304,
+      "confidence": 0.9369733333587646,
+      "class": "4pin",
+      "class_id": 10
     },
     {
-      "x": 2262,
-      "y": 2193.5,
-      "width": 242,
-      "height": 357,
-      "confidence": 0.9129451513290405,
-      "class": "north",
-      "class_id": 31
+      "x": 3201,
+      "y": 650.5,
+      "width": 232,
+      "height": 313,
+      "confidence": 0.9365777969360352,
+      "class": "6sou",
+      "class_id": 17
     },
     {
-      "x": 2578.5,
-      "y": 2195,
-      "width": 249,
-      "height": 360,
-      "confidence": 0.9096360206604004,
-      "class": "north",
-      "class_id": 31
+      "x": 1336,
+      "y": 633,
+      "width": 226,
+      "height": 314,
+      "confidence": 0.9194628000259399,
+      "class": "3pin",
+      "class_id": 7
     },
     {
-      "x": 3552.5,
-      "y": 2193.5,
-      "width": 273,
-      "height": 365,
-      "confidence": 0.9091795682907104,
-      "class": "west",
-      "class_id": 33
+      "x": 801,
+      "y": 644,
+      "width": 216,
+      "height": 316,
+      "confidence": 0.9162025451660156,
+      "class": "6man",
+      "class_id": 15
     },
     {
-      "x": 1642,
-      "y": 2189,
-      "width": 242,
-      "height": 352,
-      "confidence": 0.9054452776908875,
-      "class": "south",
-      "class_id": 32
+      "x": 1867.5,
+      "y": 650.5,
+      "width": 225,
+      "height": 311,
+      "confidence": 0.9158727526664734,
+      "class": "3sou",
+      "class_id": 8
     },
     {
-      "x": 3225.5,
-      "y": 2180.5,
-      "width": 269,
-      "height": 361,
-      "confidence": 0.904370903968811,
-      "class": "west",
-      "class_id": 33
+      "x": 2666,
+      "y": 651,
+      "width": 216,
+      "height": 314,
+      "confidence": 0.9115225076675415,
+      "class": "4sou",
+      "class_id": 11
     },
     {
-      "x": 420,
-      "y": 2195,
-      "width": 242,
-      "height": 348,
-      "confidence": 0.9023106098175049,
-      "class": "east",
-      "class_id": 28
+      "x": 3473,
+      "y": 656,
+      "width": 226,
+      "height": 314,
+      "confidence": 0.9079943299293518,
+      "class": "6sou",
+      "class_id": 17
     },
     {
-      "x": 3879,
-      "y": 2188,
-      "width": 270,
-      "height": 362,
-      "confidence": 0.8848526477813721,
-      "class": "west",
-      "class_id": 33
+      "x": 2129.5,
+      "y": 649,
+      "width": 223,
+      "height": 314,
+      "confidence": 0.8976465463638306,
+      "class": "3sou",
+      "class_id": 8
     },
     {
-      "x": 718.5,
-      "y": 2209.5,
-      "width": 253,
-      "height": 347,
-      "confidence": 0.8747633695602417,
-      "class": "east",
-      "class_id": 28
+      "x": 1066,
+      "y": 635,
+      "width": 216,
+      "height": 314,
+      "confidence": 0.8780837059020996,
+      "class": "2pin",
+      "class_id": 4
     },
     {
-      "x": 1330,
-      "y": 2190.5,
-      "width": 256,
-      "height": 353,
-      "confidence": 0.8745786547660828,
-      "class": "south",
-      "class_id": 32
+      "x": 4021,
+      "y": 678,
+      "width": 214,
+      "height": 314,
+      "confidence": 0.8728761672973633,
+      "class": "4sou",
+      "class_id": 11
     },
     {
-      "x": 2901,
-      "y": 2187.5,
-      "width": 252,
-      "height": 359,
-      "confidence": 0.871841311454773,
-      "class": "north",
-      "class_id": 31
+      "x": 2397,
+      "y": 646,
+      "width": 220,
+      "height": 314,
+      "confidence": 0.8717948198318481,
+      "class": "3sou",
+      "class_id": 8
     },
     {
-      "x": 1020.5,
-      "y": 2186.5,
-      "width": 245,
-      "height": 351,
-      "confidence": 0.8157903552055359,
-      "class": "east",
-      "class_id": 28
+      "x": 539,
+      "y": 650,
+      "width": 218,
+      "height": 314,
+      "confidence": 0.8708997368812561,
+      "class": "5man",
+      "class_id": 12
+    },
+    {
+      "x": 274.5,
+      "y": 656.5,
+      "width": 213,
+      "height": 305,
+      "confidence": 0.8690061569213867,
+      "class": "4man",
+      "class_id": 9
+    },
+    {
+      "x": 2933,
+      "y": 646.5,
+      "width": 214,
+      "height": 313,
+      "confidence": 0.8681356906890869,
+      "class": "4sou",
+      "class_id": 11
     }
   ]
 }
