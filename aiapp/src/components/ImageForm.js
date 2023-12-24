@@ -19,7 +19,7 @@ function ImageForm({image, setImage, response, setResponse, setStatus}) {
                 formData.append("file", image);
 
                 const result = await axios.post(
-                    "https://detect.roboflow.com/riichi-mahjong/6",
+                    "https://detect.roboflow.com/riichi-mahjong/7",
                     formData,
                     {
                         params: {
