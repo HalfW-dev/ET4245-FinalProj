@@ -21,7 +21,7 @@ function ScoreDisplay({deck, winningTile, config, seatWind, roundWind}) {
             <h3>Total Han: {result.han}</h3>
             <h3>Yaku List:</h3>
             {yakuList.map((yaku) => (
-                <p id={yaku.key}>{yaku.key.charAt(0).toUpperCase() + yaku.key.slice(1)}: {yaku.value}</p>
+                <p key={yaku.key}>{yaku.key.charAt(0).toUpperCase() + yaku.key.slice(1)}: {yaku.value}</p>
             ))}
         </>
     )

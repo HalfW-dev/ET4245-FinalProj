@@ -1,5 +1,9 @@
 import { Riichi } from 'riichi-ts';
 
+function mapTile(tileName: string): number{
+  return mapTileNames([...tileName])[0]
+};
+
 function mapTileNames(tileNames: string[]): number[] {
     return tileNames.map((tileName) => {
       const match = tileName.match(/^(\d+)([mps]|man|pin|sou)$/);
@@ -43,7 +47,7 @@ function mapTileNames(tileNames: string[]): number[] {
       } else {
         return -1; // Invalid tile name
       }
-    }).sort(function(a, b){return a - b});
+    });
   }
 
 function windUtils(wind: string): number {
@@ -62,15 +66,23 @@ function windUtils(wind: string): number {
 }
 
 function ScoreCalculator(deck, winningTile, config, seatWind, roundWind) {
-    let numberDeck; 
     
-    if(config.Tsumo === false) {
-        const ronDeck = deck.filter((tile) => {
-            return tile !== winningTile;
-        })
-        numberDeck = mapTileNames(ronDeck);
+    const winningTileHandler = tile => tile === winningTile;
+
+    const winningTileIndex = deck.findIndex(winningTileHandler);
+    const noWinningTileDeck = deck.toSpliced(winningTileIndex, 1)
+    const ronDeck = [...noWinningTileDeck, winningTile]
+
+    console.log(ronDeck)
+
+    const numberDeck = mapTileNames(ronDeck);
+
+    let winningTileParameter;
+
+    if(config.Tsumo === true) {
+      winningTileParameter = null;
     } else {
-        numberDeck = mapTileNames(deck);
+      winningTileParameter = numberDeck[-1];
     }
 
     const hand = new Riichi(
@@ -82,7 +94,7 @@ function ScoreCalculator(deck, winningTile, config, seatWind, roundWind) {
           bakaze: windUtils(roundWind), // round wind
           jikaze: windUtils(seatWind) // seat wind
         },
-        (config.Tsumo === true ? null : winningTile), // tile taken from someone's discard. In case of tsumo, set this to null. 
+        winningTileParameter, // tile taken from someone's discard. In case of tsumo, set this to null. 
         config.FirstTake, // was this the first take? Used to determine tenhou/chinou/renhou
         config.Riichi, // does this hand have riichi?
         config.Ippatsu, // does this hand have ippatsu?
@@ -126,6 +138,7 @@ function ScoreCalculator(deck, winningTile, config, seatWind, roundWind) {
             }
           }
        */
+    console.log(hand)
     return result;
 };
 
