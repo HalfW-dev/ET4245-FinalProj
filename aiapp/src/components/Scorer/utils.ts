@@ -1,7 +1,7 @@
 import { Riichi } from 'riichi-ts';
 
 function mapTile(tileName: string): number{
-  return mapTileNames([...tileName])[0]
+  return mapTileNames([tileName])[0]
 };
 
 function mapTileNames(tileNames: string[]): number[] {
@@ -70,20 +70,20 @@ function ScoreCalculator(deck, winningTile, config, seatWind, roundWind) {
     const winningTileHandler = tile => tile === winningTile;
 
     const winningTileIndex = deck.findIndex(winningTileHandler);
-    const noWinningTileDeck = deck.toSpliced(winningTileIndex, 1)
-    const ronDeck = [...noWinningTileDeck, winningTile]
+    const noWinningTileDeck = deck.toSpliced(winningTileIndex, 1);
 
-    console.log(ronDeck)
-
-    const numberDeck = mapTileNames(ronDeck);
+    const numberDeck = config.Tsumo === true ? mapTileNames([...noWinningTileDeck, winningTile]) : mapTileNames(noWinningTileDeck);
 
     let winningTileParameter;
 
     if(config.Tsumo === true) {
       winningTileParameter = null;
     } else {
-      winningTileParameter = numberDeck[-1];
+      winningTileParameter = mapTile(winningTile);
     }
+
+    console.log(winningTile)
+    console.log(mapTile(winningTile))
 
     const hand = new Riichi(
         numberDeck, // closed part of the hand.  Taken tile from the wall should be the last here in case of tsumo.
