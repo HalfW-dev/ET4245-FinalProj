@@ -23,6 +23,7 @@ function ImageGeneration({imageUrl, response, status}) {
 
                 // Update the component state
                 setImgBase64(newImgBase64);
+                console.timeEnd();
             } catch (error) {
                 console.error("Error:", error);
                 // Handle error and update the component state

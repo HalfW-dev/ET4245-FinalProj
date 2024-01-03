@@ -9,6 +9,7 @@ function ImageForm({image, setImage, response, setResponse, setStatus}) {
 
     const sendImage = async () => {
         try {
+            console.time()
             setStatus('pending');
 
             const fileReader = new FileReader();

@@ -88,7 +88,7 @@ function Scorer({response}) {
                 {
                     wind.map(wind => {
                         return (
-                            <option value={wind}> {wind} </option>
+                            <option key={wind} value={wind}> {wind} </option>
                         )
                     })
                 }
@@ -104,7 +104,7 @@ function Scorer({response}) {
                 {
                     wind.map(wind => {
                         return (
-                            <option value={wind}> {wind} </option>
+                            <option key={wind} value={wind}> {wind} </option>
                         )
                     })
                 }
